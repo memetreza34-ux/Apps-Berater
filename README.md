@@ -1,8 +1,8 @@
 # Apps-Berater
 
-**Das Wissen, das jede KI lesen soll, bevor sie mit dir eine App baut.**
+**Wissensbasis und praktischer Arbeitsmodus für einen KI-App-Berater – von der Idee bis zum Release.**
 
-Dieses Repository ist ein vollständiger Berater für App-Entwicklung mit KI. Es enthält den roten Faden von der Idee bis zum Betrieb, über 1.100 Prüfpunkte zu Recht, Sicherheit, Design und Tests, eine Übersicht aller Testmöglichkeiten, Vorlagen, Notfallpläne, eine Beispiel-App und zwei fertige Prüfer, die eine App automatisch gegen alles prüfen.
+Dieses Repository enthält eine umfangreiche Wissensbasis für KI-gestützte App-Entwicklung: den roten Faden von der Idee bis zum Betrieb, über 1.100 dokumentierte Prüfpunkte zu Recht, Sicherheit, Design und Tests, Vorlagen, Notfallpläne, Beispiele und zwei **agentengeführte** Prüfabläufe. Die Inhalte allein sind noch kein eigenständig laufender KI-Berater und garantieren weder Fehlerfreiheit noch Rechtskonformität.
 
 ## Wofür ist das?
 
@@ -19,9 +19,15 @@ Hier steht all das an einem Ort. Die KI liest es **vor** dem ersten Code und arb
 
 ## Warum?
 
-- **Damit du nicht in Schwierigkeiten kommst:** keine Abmahnungen, keine Datenlecks, keine abgelehnten Store-Einreichungen, keine Kostenexplosion bei der KI-API.
+- **Risiken früh erkennen:** Datenschutz-, Sicherheits-, Store- und Kostenprobleme vor einer Veröffentlichung prüfen; Risiken können dadurch reduziert, aber nicht ausgeschlossen werden.
 - **Damit jede App gleich gut wird:** Jede neue App folgt demselben Weg und denselben Prüfungen, egal welche KI du gerade nutzt.
-- **Damit du nicht alles selbst wissen musst:** Du musst nicht programmieren können. Die KI weiß durch dieses Repository, was zu tun ist, und erklärt es dir in einfachen Worten.
+- **Damit du KI gezielt steuerst:** Du musst nicht alles selbst programmieren, kannst aber Aufgaben, Nachweise und Risiken besser beurteilen.
+
+## Praktischer Berater (V0)
+
+**[MVP und Ausbauplan](./BERATER-MVP.md)** · **[Arbeitsmodus für KI](./BERATER-ARBEITSMODUS.md)** · **[Pilot mit Secret Circle](./PILOT-SECRET-CIRCLE.md)**
+
+Die erste Version funktioniert **innerhalb eines aktiven ChatGPT-/Claude-Code-Workflows**, wenn der Agent die Dokumente und – mit Erlaubnis – das aktuelle App-Repository lesen kann. Sie ermittelt den tatsächlichen Stand, den nächsten wichtigsten Schritt und die nötige Prüfung. Eine eigene Weboberfläche oder automatische Hintergrundüberwachung existiert damit noch nicht.
 
 ## So benutzt du es
 
@@ -29,6 +35,7 @@ Hier steht all das an einem Ort. Die KI liest es **vor** dem ersten Code und arb
 |---|---|
 | **Neue App mit einem Coding-Agenten** (Claude Code, Cursor, Codex, Copilot) | Repository in den Projektordner legen oder öffnen. Der Agent liest automatisch [`AGENTS.md`](./AGENTS.md) bzw. [`CLAUDE.md`](./CLAUDE.md). Sag ihm: „Lies den Apps-Berater und begleite mich nach dem roten Faden.“ |
 | **Chat ohne Dateizugriff** (ChatGPT, Claude im Browser, Gemini) | Den Link zu diesem Repository oder zu [`llms.txt`](./llms.txt) in den Chat geben und sagen: „Lies das zuerst und arbeite danach.“ Oder die benötigten Dateien hochladen. |
+| **Vorhandene App begleiten** | [`BERATER-ARBEITSMODUS.md`](./BERATER-ARBEITSMODUS.md) lesen und aktuelles Repository, offene PRs, CI und Release-Gates prüfen; nur belegten Status melden. |
 | **Vorhandene App prüfen** | Den Prüfer [`pruefer/ki-app-check`](./pruefer/README.md) laufen lassen. Er schreibt einen Ampel-Bericht: was fehlt, warum, was zu tun ist. |
 | **Den Berater selbst aktuell halten** | Alle drei Monate den Prüfer [`pruefer/katalog-pruefen`](./pruefer/README.md) laufen lassen. Er recherchiert neue Gesetze und Regeln und ergänzt den Katalog. |
 
@@ -36,6 +43,9 @@ Hier steht all das an einem Ort. Die KI liest es **vor** dem ersten Code und arb
 
 | Datei oder Ordner | Inhalt |
 |---|---|
+| [`BERATER-MVP.md`](./BERATER-MVP.md) | Produktidee und Roadmap für den interaktiven Berater |
+| [`BERATER-ARBEITSMODUS.md`](./BERATER-ARBEITSMODUS.md) | Konkreter Ablauf für Projektübernahme, Status, nächsten Schritt und Nachweise |
+| [`PILOT-SECRET-CIRCLE.md`](./PILOT-SECRET-CIRCLE.md) | Praxisfall für ein vorhandenes App-Repository |
 | [`AGENTS.md`](./AGENTS.md) | Arbeitsanweisung für **jede** KI: was sie zuerst liest, wie sie vorgeht, was sie nie tun darf |
 | [`ROTER-FADEN.md`](./ROTER-FADEN.md) | Der Weg in 14 Schritten von der Idee bis zum Betrieb – mit Lesestoff, Prüfpunkten, Tests und Abschlusskriterium je Schritt |
 | [`TESTEN.md`](./TESTEN.md) | Alle Testmöglichkeiten: was, wann, womit, und der Mindestumfang vor jedem Release |
