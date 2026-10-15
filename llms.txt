@@ -1,0 +1,49 @@
+# Apps-Berater
+
+> Wissen und Prüfkatalog, die jede KI lesen soll, bevor sie mit einer Person ohne Programmierkenntnisse eine App baut: roter Faden von der Idee bis zum Betrieb, über 1.100 Prüfpunkte (Recht DE/EU, Sicherheit, KI, Design, Tests, Stores, Steuern), alle Testmöglichkeiten und zwei Prüfer. Sprache: Deutsch.
+
+Zuerst AGENTS.md lesen und danach arbeiten.
+
+## Start
+
+- [Anweisung für jede KI](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/AGENTS.md)
+- [Roter Faden in 14 Schritten](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/ROTER-FADEN.md)
+- [Alle Testmöglichkeiten](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/TESTEN.md)
+- [Überblick](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/README.md)
+
+## Prüfkatalog (17 Kapitel)
+
+- [KI-App-Kriterienkatalog](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/README.md)
+- [01 – EU AI Act (KI-Verordnung)](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/01-eu-ai-act.md)
+- [02 – Datenschutz (DSGVO und TDDDG)](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/02-datenschutz-dsgvo.md)
+- [03 – Verbraucherrecht, Impressum und weitere Gesetze](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/03-verbraucherrecht-und-weitere-gesetze.md)
+- [04 – Rechte, Urheberrecht und Lizenzen](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/04-rechte-urheberrecht-lizenzen.md)
+- [05 – Sicherheit – Grundlagen](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/05-sicherheit-grundlagen.md)
+- [06 – KI-Sicherheit und LLM-Risiken](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/06-ki-sicherheit-llm-risiken.md)
+- [07 – KI-API, Modelle, Kosten und Qualität](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/07-ki-api-modelle-kosten-qualitaet.md)
+- [08 – Architektur, Aufbau und Code](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/08-architektur-aufbau-code.md)
+- [09 – Pflichtfunktionen jeder App](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/09-pflichtfunktionen.md)
+- [10 – KI-UX](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/10-ki-ux.md)
+- [11 – Design und Barrierefreiheit](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/11-design-barrierefreiheit.md)
+- [12 – Tests, Release und Betrieb](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/12-tests-release-betrieb.md)
+- [13 – App Stores und Plattformen](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/13-app-stores-plattformen.md)
+- [14 – Business, Zahlungen und Steuern](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/14-business-zahlungen-steuern.md)
+- [15 – Sonderfälle nach App-Typ](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/15-sonderfaelle-nach-app-typ.md)
+- [16 – Vibe-Coding-Arbeitsweise](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/16-vibe-coding-arbeitsweise.md)
+- [17 – Produkt, Launch und Wachstum](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/17-produkt-launch-wachstum.md)
+- [Prüf-Prompts für Coding-Agenten](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/PRUEF-PROMPTS.md)
+- [Quellen und Stand](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/ki-app-kriterienkatalog/QUELLEN-UND-STAND.md)
+
+## Prüfer
+
+- [App gegen den Katalog prüfen (ki-app-check)](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/pruefer/ki-app-check/SKILL.md)
+- [Katalog aktuell halten (katalog-pruefen)](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/pruefer/katalog-pruefen/SKILL.md)
+
+## Vertiefung
+
+- [Master-Anleitung von der Idee bis zum Betrieb](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/app-master-anleitung/README.md)
+- [Gesamtfahrplan](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/app-master-anleitung/01-gesamtfahrplan.md)
+- [Technisches Handbuch](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/allgemeine-app-entwicklung/README.md)
+- [Teststrategie und Release-Gates](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/allgemeine-app-entwicklung/06-tests-release-betrieb/teststrategie-und-release-gates.md)
+- [Masterprompt für Coding-Agenten](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/allgemeine-app-entwicklung/12-agenten-masterprompt/CLAUDE-CODE-APP-MASTERPROMPT.md)
+- [Vorlagen](https://raw.githubusercontent.com/memetreza34-ux/Apps-Berater/main/wissen/allgemeine-app-entwicklung/vorlagen/INDEX.md)

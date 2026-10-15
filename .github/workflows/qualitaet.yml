@@ -1,0 +1,46 @@
+name: Qualitätsprüfung
+
+# Der Workflow ist vollständig vorbereitet, bleibt aber vorerst manuell.
+# Die Repository-Runs sind am 04.08.2026 bereits vor dem ersten Job-Schritt
+# fehlgeschlagen. Nach Aktivierung/Behebung der GitHub-Actions-Runner kann
+# push, pull_request und schedule wieder ergänzt werden.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show runtime versions
+        run: |
+          python --version
+          node --version
+      - name: Check criteria catalog
+        run: python pruefer/katalog-pruefen/katalog_check.py
+      - name: Validate master guide
+        run: python scripts/validate_master_guide.py
+      - name: Validate handbook structure
+        run: python scripts/validate_handbook.py
+      - name: Test decision assistant
+        run: python -m unittest discover -s scripts/tests -v
+      - name: Test FocusFlow reference app
+        run: python -m unittest discover -s beispiel-apps/focusflow-pwa/tests -v
+      - name: Check JavaScript syntax
+        run: |
+          node --check beispiel-apps/focusflow-pwa/app.js
+          node --check beispiel-apps/focusflow-pwa/sw.js
+          node --check beispiel-apps/focusflow-supabase/rls-smoke.mjs
+      - name: Smoke-test static app over HTTP
+        run: |
+          python -m http.server 4173 --directory beispiel-apps/focusflow-pwa >/tmp/focusflow.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID' EXIT
+          sleep 2
+          curl --fail --silent --show-error http://127.0.0.1:4173/index.html >/dev/null
+      - name: Check external links
+        run: python scripts/check_external_links.py

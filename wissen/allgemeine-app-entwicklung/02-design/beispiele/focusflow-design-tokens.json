@@ -1,0 +1,63 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "color": {
+    "background": {
+      "default": { "$value": "#F3F6F4", "$type": "color" },
+      "dark": { "$value": "#101815", "$type": "color" }
+    },
+    "surface": {
+      "default": { "$value": "#FFFFFF", "$type": "color" },
+      "soft": { "$value": "#EEF4F1", "$type": "color" },
+      "dark": { "$value": "#17231F", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "#17211E", "$type": "color" },
+      "muted": { "$value": "#5B6964", "$type": "color" },
+      "inverse": { "$value": "#FFFFFF", "$type": "color" }
+    },
+    "action": {
+      "primary": { "$value": "#1F6A5B", "$type": "color" },
+      "primaryHover": { "$value": "#174D43", "$type": "color" },
+      "danger": { "$value": "#A22B32", "$type": "color" }
+    },
+    "border": {
+      "default": { "$value": "#CFDAD5", "$type": "color" },
+      "focus": { "$value": "#1F6A5B", "$type": "color" }
+    }
+  },
+  "space": {
+    "1": { "$value": "0.25rem", "$type": "dimension" },
+    "2": { "$value": "0.5rem", "$type": "dimension" },
+    "3": { "$value": "0.75rem", "$type": "dimension" },
+    "4": { "$value": "1rem", "$type": "dimension" },
+    "5": { "$value": "1.5rem", "$type": "dimension" },
+    "6": { "$value": "2rem", "$type": "dimension" },
+    "7": { "$value": "3rem", "$type": "dimension" }
+  },
+  "radius": {
+    "small": { "$value": "0.625rem", "$type": "dimension" },
+    "medium": { "$value": "1rem", "$type": "dimension" },
+    "large": { "$value": "1.5rem", "$type": "dimension" },
+    "pill": { "$value": "999px", "$type": "dimension" }
+  },
+  "font": {
+    "family": {
+      "body": {
+        "$value": ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        "$type": "fontFamily"
+      }
+    },
+    "size": {
+      "body": { "$value": "1rem", "$type": "dimension" },
+      "label": { "$value": "0.875rem", "$type": "dimension" },
+      "title": { "$value": "1.5rem", "$type": "dimension" },
+      "display": { "$value": "4rem", "$type": "dimension" }
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": { "$value": "120ms", "$type": "duration" },
+      "normal": { "$value": "220ms", "$type": "duration" }
+    }
+  }
+}

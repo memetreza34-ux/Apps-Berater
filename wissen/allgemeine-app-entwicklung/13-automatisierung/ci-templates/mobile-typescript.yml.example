@@ -1,0 +1,54 @@
+name: Mobile App CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mobile-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Project health check
+        run: npm run doctor
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit and integration tests
+        run: npm test -- --run
+
+  android-build-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    needs: quality
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Create non-production Android test build
+        run: npm run build:android:test
+
+# Vor Übernahme anpassen:
+# - Buildsystem, Scriptnamen und Plattformen an das Projekt angleichen.
+# - Signierung und Store-Credentials nur in geschützten Umgebungen verwenden.
+# - Pull Requests aus nicht vertrauenswürdigen Quellen erhalten keine Secrets.
+# - iOS-Builds benötigen einen passenden macOS-Runner oder einen kontrollierten Builddienst.
+# - Echte Gerätetests, Deep Links, Push und Berechtigungen bleiben zusätzliche Release-Gates.

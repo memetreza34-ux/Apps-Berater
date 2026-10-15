@@ -1,0 +1,59 @@
+name: App CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: app-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit and integration tests
+        run: npm test -- --run
+      - name: Production build
+        run: npm run build
+
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    needs: quality
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Install browser dependencies
+        run: npm run e2e:install
+      - name: Run critical E2E flows
+        run: npm run e2e
+        env:
+          APP_BASE_URL: http://127.0.0.1:3000
+
+# Vor Übernahme anpassen:
+# - Scriptnamen an package.json angleichen.
+# - Keine Produktions-Secrets in Pull-Request-Workflows bereitstellen.
+# - E2E mit isolierter Testdatenbank und Testkonten ausführen.
+# - Dependency-, Secret- und Lizenzscan entsprechend Risiko ergänzen.
+# - Action-Versionen regelmäßig aus offiziellen Quellen aktualisieren.

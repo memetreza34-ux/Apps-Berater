@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f4f46">
+  <meta name="description" content="FocusFlow Referenz-App für fokussierte Arbeit in kurzen Sessions.">
+  <title>FocusFlow – Referenz-App</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Ausführbare Referenz-App</p>
+      <h1>FocusFlow</h1>
+    </div>
+    <p class="header-copy">Aufgabe wählen, Fokus starten, Fortschritt sichtbar machen.</p>
+  </header>
+
+  <main id="main" class="app-grid">
+    <section class="panel" aria-labelledby="tasks-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Schritt 1</p>
+          <h2 id="tasks-title">Aufgaben</h2>
+        </div>
+        <span id="task-count" class="count-badge" aria-live="polite">0 offen</span>
+      </div>
+
+      <form id="task-form" class="task-form" novalidate>
+        <label for="task-title">Neue Aufgabe</label>
+        <div class="input-row">
+          <input id="task-title" name="task-title" type="text" maxlength="120" autocomplete="off" placeholder="Zum Beispiel: Kapitel zusammenfassen" required>
+          <button type="submit">Hinzufügen</button>
+        </div>
+        <p id="task-error" class="field-message" role="alert" hidden></p>
+      </form>
+
+      <div id="empty-state" class="empty-state">
+        <h3>Noch keine Aufgabe</h3>
+        <p>Lege eine klare Aufgabe an. Danach kannst du direkt eine Fokus-Session starten.</p>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-label="Aufgabenliste"></ul>
+    </section>
+
+    <section class="panel focus-panel" aria-labelledby="focus-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Schritt 2</p>
+          <h2 id="focus-title">Fokus-Session</h2>
+        </div>
+        <span id="timer-state" class="status-badge">Bereit</span>
+      </div>
+
+      <div class="current-task" aria-live="polite">
+        <span>Ausgewählte Aufgabe</span>
+        <strong id="selected-task">Keine Aufgabe ausgewählt</strong>
+      </div>
+
+      <div id="timer" class="timer" role="timer" aria-label="Verbleibende Fokuszeit">25:00</div>
+
+      <div class="timer-actions">
+        <button id="start-pause" type="button" class="primary-action">Starten</button>
+        <button id="reset-timer" type="button" class="secondary-action">Zurücksetzen</button>
+      </div>
+
+      <p class="helper-text">Die Demo nutzt 25 Minuten. Zum schnellen Testen kann die Zeit im Browsercode angepasst werden.</p>
+
+      <div class="stats" aria-label="Fortschritt">
+        <article>
+          <span>Abgeschlossen</span>
+          <strong id="completed-count">0</strong>
+        </article>
+        <article>
+          <span>Fokus-Sessions</span>
+          <strong id="session-count">0</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel data-panel" aria-labelledby="data-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Kontrolle</p>
+          <h2 id="data-title">Deine lokalen Daten</h2>
+        </div>
+      </div>
+      <p>Diese Demo speichert nur in diesem Browser. Du kannst die Daten exportieren oder vollständig löschen.</p>
+      <div class="data-actions">
+        <button id="export-data" type="button" class="secondary-action">JSON exportieren</button>
+        <button id="delete-data" type="button" class="danger-action">Alle Daten löschen</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-status" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <footer>
+    <p>Referenz für das Handbuch „Von Idee bis Fertig“. Keine Produktivdaten verwenden.</p>
+  </footer>
+</body>
+</html>

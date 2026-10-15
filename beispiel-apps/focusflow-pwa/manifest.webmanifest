@@ -1,0 +1,19 @@
+{
+  "name": "FocusFlow Referenz-App",
+  "short_name": "FocusFlow",
+  "description": "Abhängigeitsfreie Referenz-App für fokussierte Arbeit in kurzen Sessions.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6f4",
+  "theme_color": "#1f4f46",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
